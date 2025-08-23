@@ -37,7 +37,4 @@ ENV FASTMCP_PORT=${PORT:-8081}
 
 RUN echo "MCP_SERVER_TRANSPORT=${MCP_SERVER_TRANSPORT}" > /app/.env && echo "FASTMCP_HOST=${FASTMCP_HOST}" >> /app/.env && echo "FASTMCP_PORT=${FASTMCP_PORT}" >> /app/.env
 
-# Set the correct environment variables as required by Smithery proxy
-EXPOSE ${FASTMCP_PORT}
-
 ENTRYPOINT ["python3", "-m", "frankfurtermcp.server"]
