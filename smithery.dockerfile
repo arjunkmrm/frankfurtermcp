@@ -34,8 +34,4 @@ ENV PATH="/app/.venv/bin:$PATH"
 ENV FASTMCP_HOST="0.0.0.0"
 ENV MCP_SERVER_TRANSPORT="streamable-http"
 
-ENTRYPOINT sh -c 'export FASTMCP_PORT=${PORT:-8081} && \
-    echo "MCP_SERVER_TRANSPORT=${MCP_SERVER_TRANSPORT}" > /app/.env && \
-    echo "FASTMCP_HOST=${FASTMCP_HOST}" >> /app/.env && \
-    echo "FASTMCP_PORT=${FASTMCP_PORT}" >> /app/.env && \
-    exec python3 -m frankfurtermcp.server'
+ENTRYPOINT ["sh", "-c", "export FASTMCP_PORT=${PORT:-8081} && echo \"MCP_SERVER_TRANSPORT=${MCP_SERVER_TRANSPORT}\" > /app/.env && echo \"FASTMCP_HOST=${FASTMCP_HOST}\" >> /app/.env && echo \"FASTMCP_PORT=${FASTMCP_PORT}\" >> /app/.env && exec python3 -m frankfurtermcp.server"]
