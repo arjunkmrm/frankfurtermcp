@@ -13,6 +13,15 @@ _If your objective is to use the tools available on this MCP server, please refe
 
 The directory where you clone this repository will be referred to as the _working directory_ or _WD_ hereinafter.
 
+### Installing via Smithery
+
+To install Frankfurter Currency Exchange Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@arjunkmrm/frankfurtermcp):
+
+```bash
+npx -y @smithery/cli install @arjunkmrm/frankfurtermcp --client claude
+```
+
+### Installing Manually
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/). To install the project with its minimal dependencies in a virtual environment, run the following in the _WD_. To install all non-essential dependencies (_which are required for developing and testing_), replace the `--no-dev` with the `--all-groups` flag in the following command.
 
 ```bash
